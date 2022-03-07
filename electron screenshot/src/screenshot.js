@@ -1,7 +1,8 @@
 const saveBtn = document.getElementById("saveBtn");
 const fs = require("fs");
-const Toastify = require("toastify-js");
 
+const Toastify = require("toastify-js");
+console.table(screen);
 const date = new Date();
 
 function screenS() {
@@ -13,8 +14,8 @@ function screenS() {
   dateDiv.innerText = date.toUTCString();
   let video = document.getElementById("video");
 
-  canvas.width = 1920;
-  canvas.height = 1110;
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight + 30;
 
   let ctx = canvas.getContext("2d");
   ctx.fillStyle = "#000";
