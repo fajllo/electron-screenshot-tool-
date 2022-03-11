@@ -51,6 +51,7 @@ function screenS() {
       color: "white",
     },
   }).showToast();
+  document.getElementById("name").value = "";
 }
 
 saveBtn.addEventListener("click", screenS);
