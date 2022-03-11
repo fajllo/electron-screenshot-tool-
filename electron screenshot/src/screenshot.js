@@ -40,11 +40,21 @@ function screenS() {
     close: true,
     duration: 1500,
     style: {
-      background: "linear-gradient(to right, #52b788, #40916c)",
+      background: "linear-gradient(to right, #52b788, #b7e4c7)",
       margin: "10px",
       padding: "5px",
+      position: "absolute",
+      top: "25px",
+      left: "45%",
+      width: "50%",
+      borderRadius: "25px",
     },
   }).showToast();
 }
 
 saveBtn.addEventListener("click", screenS);
+window.addEventListener("keypress", e => {
+  if (e.code == "Enter") {
+    screenS();
+  }
+});

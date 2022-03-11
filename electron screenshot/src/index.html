@@ -8,44 +8,57 @@
     <script defer src="render.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
   </head>
-  <body class="content bg-black">
-    <div id="photo" class="w-42">
-      <video id="video"></video>
-    </div>
+  <body
+    class="content bg-black flex flex-col w-screen justify-around h-screen relative"
+  >
+    <section class="main flex h-full w-full">
+      <video id="video" class=""></video>
 
-    <button
-      id="saveBtn"
-      class="button px-4 py-2 m-2 bg-gray-700 text-yellow-300 rounded-md"
-    >
-      save
-    </button>
+      <div class="flex flex-col min-w-1/2 max-w-1/2 justify-center">
+        <div id=" button-container w-full">
+          <button
+            id="saveBtn"
+            class="button px-4 py-2 m-2 bg-emerald-500 text-slate-100 rounded-md w-full"
+          >
+            save
+          </button>
 
-    <button
-      id="videoSelectBtn"
-      class="button px-4 py-2 m-2 bg-purple-700 text-purple-100 rounded-md"
-    >
-      Image Source
-    </button>
-    <div class="text-white mx-4">
-      <div class="relative">
-        <label for="name" class="text-sm">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          class="w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-        />
+          <button
+            id="videoSelectBtn"
+            class="button px-4 py-2 m-2 bg-purple-700 text-purple-100 rounded-md w-full"
+          >
+            Image Source
+          </button>
+        </div>
+
+        <!-- input container -->
+        <div class="text-white mx-4 w-full">
+          <!-- input one -->
+          <div class="relative">
+            <label for="name" class="text-sm">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            />
+          </div>
+          <!-- end of input one -->
+          <!-- input two -->
+          <div class="relative">
+            <label for="path" class="text-sm">Path</label>
+            <input
+              type="text"
+              id="path"
+              name="path"
+              class="w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            />
+          </div>
+          <!-- end of input two -->
+        </div>
+        <!-- end of input container-->
       </div>
-      <div class="relative">
-        <label for="path" class="text-sm">Path</label>
-        <input
-          type="text"
-          id="path"
-          name="path"
-          class="w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-        />
-      </div>
-    </div>
+    </section>
 
     <script src="./screenshot.js"></script>
   </body>
