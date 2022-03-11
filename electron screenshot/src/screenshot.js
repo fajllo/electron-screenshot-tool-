@@ -40,7 +40,7 @@ function screenS() {
     close: true,
     duration: 1500,
     style: {
-      background: "linear-gradient(to right, #52b788, #b7e4c7)",
+      background: "linear-gradient(to right, #3fa34d, #137547)",
       margin: "10px",
       padding: "5px",
       position: "absolute",
@@ -48,6 +48,7 @@ function screenS() {
       left: "45%",
       width: "50%",
       borderRadius: "25px",
+      color: "white",
     },
   }).showToast();
 }
