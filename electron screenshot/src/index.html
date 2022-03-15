@@ -17,17 +17,16 @@
       <div class="flex flex-col min-w-1/2 max-w-1/2 justify-center">
         <div id=" button-container w-full">
           <button
-            id="saveBtn"
-            class="button px-4 py-2 m-2 bg-emerald-500 text-slate-100 rounded-md w-full"
-          >
-            save
-          </button>
-
-          <button
             id="videoSelectBtn"
             class="button px-4 py-2 m-2 bg-purple-700 text-purple-100 rounded-md w-full"
           >
             Image Source
+          </button>
+          <button
+            id="saveBtn"
+            class="button px-4 py-2 m-2 bg-emerald-500 text-slate-100 rounded-md w-full"
+          >
+            save
           </button>
         </div>
 
@@ -60,6 +59,60 @@
       </div>
     </section>
 
+    <!-- modal component  -->
+    <div class="w-full flex justify-center items-center bg-black">
+      <p
+        id="modal-switch"
+        class="text-[5vw] bg-gradient-to-r from-indigo-500 via-purple-500 text-transparent bg-clip-text to-pink-500 font-bold cursor-pointer mb-4"
+      >
+        Repetiting screenshot
+      </p>
+    </div>
+    <!-- Modal  -->
+    <div class="w-full h-full hidden opacity-1" id="modal">
+      <div
+        id="modal-bg"
+        class="w-full h-full bg-[#011627] top-0 absolute hidden"
+      ></div>
+      <div
+        id="modal-box"
+        class="sm:w-[385px] sm:min-w-[80vw] min-w-[80vw] min-h-[50vh] flex flex-col items-center gap-2 -translate-y-1/2 py-4 px-2 bg-[#011627] rounded-md top-1/2 left-1/2 -translate-x-1/2 absolute hidden"
+      >
+        <div class="mb-1 text-black">
+          <textarea
+            id="softlist"
+            rows="7"
+            cols="70"
+            placeholder="Software list"
+            class="w-full rounded py-3 px-[14px] text-body-color text-base border border-[ff37a6] bg-[#edf2fb] resize-none outline-none focus-visible:shadow-none focus:border-primary"
+          ></textarea>
+        </div>
+        <div class="relative text-white my-1">
+          <label for="path" class="text-md">Existing screenshot path</label>
+          <input
+            type="text"
+            id="exising-path"
+            name="path"
+            class="w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+          />
+          <label for="path" class="text-md">save path</label>
+          <input
+            type="text"
+            id="save-path"
+            name="path"
+            class="w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+          />
+        </div>
+        <button
+          id="repeat"
+          class="p-2 bg-[#715aff] rounded-lg w-full text-white"
+        >
+          Repeat
+        </button>
+      </div>
+    </div>
+
     <script src="./screenshot.js"></script>
+    <script src="./modal.js"></script>
   </body>
 </html>

@@ -55,8 +55,44 @@ function screenS() {
 }
 
 saveBtn.addEventListener("click", screenS);
-window.addEventListener("keypress", e => {
+document.getElementById("name").addEventListener("keypress", e => {
   if (e.code == "Enter") {
     screenS();
   }
+});
+
+function repeat(imgPath, softList) {
+  const savePath = document.getElementById("save-path");
+  fs.readFile(imgPath, function (err, data) {
+    if (err) throw err;
+    for (let name of softList) {
+      let saveAs = `${savePath.value}${name}.png`;
+      fs.writeFile(saveAs, data, "base64", function (err) {
+        console.log(err);
+      });
+    }
+    Toastify({
+      text: "repeating completed successfully",
+      close: true,
+      duration: 1500,
+      style: {
+        background: "linear-gradient(to right, #5bba6f, #5bba6f)",
+        margin: "10px",
+        padding: "5px",
+
+        width: "50%",
+        borderRadius: "25px",
+        color: "white",
+        zIndex: "10",
+      },
+    }).showToast();
+  });
+}
+
+const rep = document.getElementById("repeat");
+rep.addEventListener("click", () => {
+  const path = document.getElementById("exising-path");
+  const names = document.getElementById("softlist");
+  const softList = names.value.split("\n");
+  repeat(path.value, softList);
 });
