@@ -16,6 +16,7 @@
 
       <div class="flex flex-col min-w-1/2 max-w-1/2 justify-center">
         <div id=" button-container w-full">
+          <div></div>
           <button
             id="videoSelectBtn"
             class="button px-4 py-2 m-2 bg-purple-700 text-purple-100 rounded-md w-full"
@@ -34,7 +35,7 @@
         <div class="text-white mx-4 w-full">
           <!-- input one -->
           <div class="relative">
-            <label for="name" class="text-sm">Name</label>
+            <label for="name" class="text-sm">Software Name</label>
             <input
               type="text"
               id="name"
@@ -53,6 +54,12 @@
               class="w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
+          <button
+            id="select-path"
+            class="button text-black px-4 py-2 m-2 bg-[#F7AE32] text-slate-100"
+          >
+            select save directory
+          </button>
           <!-- end of input two -->
         </div>
         <!-- end of input container-->
@@ -88,19 +95,19 @@
           ></textarea>
         </div>
         <div class="relative text-white my-1">
-          <label for="path" class="text-md">Existing screenshot path</label>
+          <label for="path" class="text-md modal-file">Existing screenshot path</label>
           <input
             type="text"
             id="exising-path"
             name="path"
-            class="w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            class="modal-file-save w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
           />
-          <label for="path" class="text-md">save path</label>
+          <label for="path" class="text-md modal-path ">save path</label>
           <input
             type="text"
             id="save-path"
             name="path"
-            class="w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            class="modal-path-save w-full bg-gray-600 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
           />
         </div>
         <button

@@ -1,5 +1,5 @@
 const { desktopCapturer, remote } = require("electron");
-const { Menu } = remote;
+const { Menu, dialog } = remote;
 
 // Global state
 let mediaRecorder; // MediaRecorder instance to capture footage
@@ -65,3 +65,39 @@ function handleDataAvailable(e) {
   console.log("video data available");
   recordedChunks.push(e.data);
 }
+
+async function selectSavePath() {
+  const { filePaths } = await dialog.showOpenDialog({
+    buttonLabel: "select",
+    properties: ["openFile", "openDirectory"],
+  });
+
+  let savePath = `${filePaths[0]}`;
+  return savePath;
+}
+async function selectSaveFile() {
+  const { filePaths } = await dialog.showOpenDialog({
+    buttonLabel: "select",
+    properties: ["openFile"],
+  });
+
+  let savePath = `${filePaths[0]}`;
+  return savePath;
+}
+const selectPath = document.getElementById("select-path");
+selectPath.addEventListener("click", async () => {
+  let path = document.getElementById("path");
+  path.value = await selectSavePath();
+});
+
+const modalPath = document.querySelector(".modal-path");
+modalPath.addEventListener("click", async () => {
+  let path = document.querySelector(".modal-path-save");
+  path.value = await selectSavePath();
+});
+
+const modalFilePath = document.querySelector(".modal-file");
+modalFilePath.addEventListener("click", async () => {
+  let path = document.querySelector(".modal-file-save");
+  path.value = await selectSaveFile();
+});

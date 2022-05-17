@@ -31,7 +31,7 @@ function screenS() {
   ctx.drawImage(video, 0, 30, canvas.width, canvas.height - 30);
   let image = canvas.toDataURL("image/png");
   const base64Data = image.replace(/^data:image\/png;base64,/, "");
-  const saveAs = `${path}${name}.png`;
+  const saveAs = `${path}\\${name}.png`;
   fs.writeFile(saveAs, base64Data, "base64", function (err) {
     console.log(err);
   });
@@ -47,7 +47,7 @@ function screenS() {
       top: "25px",
       left: "45%",
       width: "50%",
-      borderRadius: "25px",
+      border: "2px green solid",
       color: "white",
     },
   }).showToast();
@@ -66,7 +66,7 @@ function repeat(imgPath, softList) {
   fs.readFile(imgPath, function (err, data) {
     if (err) throw err;
     for (let name of softList) {
-      let saveAs = `${savePath.value}${name}.png`;
+      let saveAs = `${savePath.value}\\${name}.png`;
       fs.writeFile(saveAs, data, "base64", function (err) {
         console.log(err);
       });
@@ -81,7 +81,7 @@ function repeat(imgPath, softList) {
         padding: "5px",
 
         width: "50%",
-        borderRadius: "25px",
+        border: "25px solid yellow",
         color: "white",
         zIndex: "10",
       },

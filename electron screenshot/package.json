@@ -1,7 +1,7 @@
 {
   "name": "Screenshooter",
   "productName": "Screenshooter electron app",
-  "version": "1.0.0",
+  "version": "2.3.0",
   "description": "electron app to make screen shots of selected window or screen",
   "main": "src/index.js",
   "scripts": {
